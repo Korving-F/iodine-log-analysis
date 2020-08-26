@@ -1,0 +1,88 @@
+Aug  8 18:53:23 dnsmasq[1]: started, version 2.82 cachesize 150
+Aug  8 18:53:23 dnsmasq[1]: compile time options: IPv6 GNU-getopt no-DBus no-UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP no-conntrack ipset auth no-DNSSEC loop-detect inotify dumpfile
+Aug  8 18:53:23 dnsmasq[1]: using nameserver 172.18.0.2#53 for domain attack
+Aug  8 18:53:23 dnsmasq[1]: using nameserver 8.8.8.8#53
+Aug  8 18:53:23 dnsmasq[1]: using nameserver 9.9.9.9#53
+Aug  8 18:53:23 dnsmasq[1]: read /etc/hosts - 7 addresses
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] yrbqlj.example.attack from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded yrbqlj.example.attack to 172.18.0.2
+Aug  9 09:06:36 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] vaaaakawbni.example.attack from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded vaaaakawbni.example.attack to 172.18.0.2
+Aug  9 09:06:36 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] labzmrbelnrg2q5er5jm15kousqlmc0y.example.attack from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded labzmrbelnrg2q5er5jm15kousqlmc0y.example.attack to 172.18.0.2
+Aug  9 09:06:36 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] yrbqlm.example.attack from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded yrbqlm.example.attack to 172.18.0.2
+Aug  9 09:06:36 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] <name unprintable> from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded <name unprintable> to 172.18.0.2
+Aug  9 09:06:36 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] <name unprintable> from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded <name unprintable> to 172.18.0.2
+Aug  9 09:06:36 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:06:36 dnsmasq[1]: query[NULL] zqlpaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ.example.attack from 172.18.0.3
+Aug  9 09:06:36 dnsmasq[1]: forwarded zqlpaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ.example.attack to 172.18.0.2
+Aug  9 09:25:12 dnsmasq[1]: query[SRV] pabax5ia.example.attack from 172.18.0.3
+Aug  9 09:25:12 dnsmasq[1]: forwarded pabax5ia.example.attack to 172.18.0.2
+Aug  9 09:25:12 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:25:12 dnsmasq[1]: reply pabax5ia.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabax5ia.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabax5ia.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabax5ia.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabax5ia.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: query[SRV] pabih5ii.example.attack from 172.18.0.3
+Aug  9 09:25:12 dnsmasq[1]: forwarded pabih5ii.example.attack to 172.18.0.2
+Aug  9 09:25:12 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:25:12 dnsmasq[1]: reply pabih5ii.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabih5ii.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabih5ii.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply pabih5ii.example.attack is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: query[SRV] <name unprintable> from 172.18.0.3
+Aug  9 09:25:12 dnsmasq[1]: forwarded <name unprintable> to 172.18.0.2
+Aug  9 09:25:12 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:25:12 dnsmasq[1]: reply <name unprintable> is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply <name unprintable> is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply <name unprintable> is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply <name unprintable> is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: reply <name unprintable> is <SRV>
+Aug  9 09:25:12 dnsmasq[1]: query[SRV] pabqh5iq.example.attack from 172.18.0.3
+Aug  9 09:25:12 dnsmasq[1]: forwarded pabqh5iq.example.attack to 172.18.0.2
+Aug  9 09:54:15 dnsmasq[1]: query[TXT] paaaeqhq.example.attack from 172.18.0.3
+Aug  9 09:54:15 dnsmasq[1]: forwarded paaaeqhq.example.attack to 172.18.0.2
+Aug  9 09:54:15 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:54:15 dnsmasq[1]: reply paaaeqhi.example.attack is r
+Aug  9 09:54:19 dnsmasq[1]: query[TXT] paaaeqhy.example.attack from 172.18.0.3
+Aug  9 09:54:19 dnsmasq[1]: forwarded paaaeqhy.example.attack to 172.18.0.2
+Aug  9 09:54:19 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:54:19 dnsmasq[1]: reply paaaeqhq.example.attack is r
+Aug  9 09:54:23 dnsmasq[1]: query[TXT] paaaeqia.example.attack from 172.18.0.3
+Aug  9 09:54:23 dnsmasq[1]: forwarded paaaeqia.example.attack to 172.18.0.2
+Aug  9 09:54:23 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:54:23 dnsmasq[1]: reply paaaeqhy.example.attack is r
+Aug  9 09:54:27 dnsmasq[1]: query[TXT] paaaeqii.example.attack from 172.18.0.3
+Aug  9 09:54:27 dnsmasq[1]: forwarded paaaeqii.example.attack to 172.18.0.2
+Aug  9 09:54:27 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:54:27 dnsmasq[1]: reply paaaeqia.example.attack is r
+Aug  9 09:54:31 dnsmasq[1]: query[TXT] paaaeqiq.example.attack from 172.18.0.3
+Aug  9 09:54:31 dnsmasq[1]: forwarded paaaeqiq.example.attack to 172.18.0.2
+Aug  9 09:54:31 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:54:31 dnsmasq[1]: reply paaaeqii.example.attack is r
+Aug  9 09:54:35 dnsmasq[1]: query[TXT] paaaeqiy.example.attack from 172.18.0.3
+Aug  9 09:54:35 dnsmasq[1]: forwarded paaaeqiy.example.attack to 172.18.0.2
+Aug  9 09:54:35 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  9 09:54:35 dnsmasq[1]: reply paaaeqiq.example.attack is r
+Aug  8 18:30:31 dnsmasq[10]: query[CNAME] z123as123213asdasdd.example.attack from 172.18.0.3
+Aug  8 18:30:31 dnsmasq[10]: forwarded z123as123213asdasdd.example.attack to 172.18.0.2
+Aug  8 18:30:31 dnsmasq[10]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  8 18:30:07 dnsmasq[10]: query[NULL] pabaa5fy.example.attack from 172.18.0.3
+Aug  8 18:30:07 dnsmasq[10]: forwarded pabaa5fy.example.attack to 172.18.0.2
+Aug  8 18:30:07 dnsmasq[10]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  8 18:30:11 dnsmasq[10]: query[NULL] pabaa5ga.example.attack from 172.18.0.3
+Aug  8 18:30:11 dnsmasq[10]: forwarded pabaa5ga.example.attack to 172.18.0.2
+Aug  8 18:30:11 dnsmasq[10]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  8 18:30:11 dnsmasq[10]: query[SRV] z123as123213asdasdd.example.attack from 172.18.0.3
+Aug  8 18:30:11 dnsmasq[10]: forwarded z123as123213asdasdd.example.attack to 172.18.0.2
+Aug  8 18:30:11 dnsmasq[10]: nameserver 172.18.0.2 refused to do a recursive query
+Aug  8 18:30:11 dnsmasq[10]: reply z123as123213asdasdd.example.attack is <SRV>
