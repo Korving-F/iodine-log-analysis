@@ -1,0 +1,32 @@
+version: '3'
+services:
+  dns_server:
+    build: './.circleci/images/dns_server'
+    privileged: true
+    volumes:
+      - /tmp/dnsmasq-logs:/var/log 
+    networks:
+      static-network:
+        ipv4_address: 172.18.0.4
+  attack_client:
+    build: './.circleci/images/attack_client'
+    privileged: true
+    depends_on:
+      - 'attack_server'
+    networks:
+      static-network:
+        ipv4_address: 172.18.0.3
+  attack_server:
+    build: './.circleci/images/attack_server'
+    privileged: true
+    networks:
+      static-network:
+        ipv4_address: 172.18.0.2
+
+networks:
+  static-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/16
