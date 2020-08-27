@@ -5,6 +5,7 @@ services:
     privileged: true
     volumes:
       - /tmp/dnsmasq-logs:/var/log 
+    container_name: dns_server_1
     networks:
       static-network:
         ipv4_address: 172.18.0.4
@@ -13,12 +14,14 @@ services:
     privileged: true
     depends_on:
       - 'attack_server'
+    container_name: attack_client_1
     networks:
       static-network:
         ipv4_address: 172.18.0.3
   attack_server:
     build: './.circleci/images/attack_server'
     privileged: true
+    container_name: attack_server_1
     networks:
       static-network:
         ipv4_address: 172.18.0.2
