@@ -106,7 +106,7 @@ $ ip link | grep <number>
 
 ### Log Samples
 <details>
-<summary>Depending on encoding on the client either garbage is spewed out or merely a `"<name unprintable>"`.</summary>
+<summary>Depending on encoding on the client either garbage is spewed out or merely a "name unprintable".</summary>
 <p>
 
 ```console
@@ -437,6 +437,25 @@ Aug 23 06:06:31 dnsmasq[1]: forwarded <name unprintable> to 172.18.0.2
 Aug 23 06:06:31 dnsmasq[1]: nameserver 172.18.0.2 refused to do a recursive query
 ```
 
+</p>
+</details>
+
+
+
+
+<details>
+<summary>And then some interesting logs found when the tunnel is initialized. All combinations (record type X encoding) have an initial request with the alphabet embedded. To be more exact the character 'z', 3 sequence characters (below: pvn, vt2, vt3) and then the 52 character alphabet (uppercase + lowercase) follows. For tunnels setup using TXT record types, the logs could display some funny / nonsense sentences in German/French.</summary>
+</p>
+```console
+# Embedded alphabet
+Aug 27 18:56:55 dnsmasq[1]: query[TXT] zpvnaAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ.example.attack from 172.18.0.3
+
+# Aaahhh Drink mal ein Jägermeister
+Aug 23 06:12:37 dnsmasq[1]: reply zvt2aA-Aaahhh-Drink-mal-ein-J�germeister-.example.attack is tpj1himtbiewucylbnbugqlkeojuw20znnvqwyllfnfxc0sxem3sxe1lfnfzxizlsfuxa
+
+# La flûte naïve française est retiré à crête
+Aug 23 06:12:37 dnsmasq[1]: reply zvt3aA-La-fl�te-na�ve-fran�aise-est-retir�-�-Cr�te.example.attack is tpj1him1biewuyyjnmzwpw3dffvxgd11wmuwwm2tbn1twc0ltmuwwk21ufvzgk3djolus1ybninzoq3dffy
+```
 </p>
 </details>
 
