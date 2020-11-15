@@ -29,3 +29,5 @@ Detection notes:
 * <a href="https://github.com/jpillora/docker-dnsmasq">dnsmasq in Docker</a>
 * <a href="https://github.com/yarrick/iodine">Iodine</a>
 * <a href="https://blog.stalkr.net/2010/10/hacklu-ctf-challenge-9-bottle-writeup.html">Great CTF writeup</a>
+* <a href="https://unit42.paloaltonetworks.com/dns-tunneling-in-the-wild-overview-of-oilrigs-dns-tunneling/">DNS Tunneling in the Wild: Overview of OilRig’s DNS Tunneling</a>
+* <a href="https://unit42.paloaltonetworks.com/dns-tunneling-how-dns-can-be-abused-by-malicious-actors/">DNS Tunneling: how DNS can be (ab)used by malicious actors</a>
