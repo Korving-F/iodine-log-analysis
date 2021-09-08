@@ -10,7 +10,7 @@ This project consists of three Docker containers:
 * DNS Server forwarding requests to Iodined. (dnsmasq)
 * Iodine client on which to create the DNS tunnel and exfiltrate data.
 
-A circleci matrix pipeline was created to generate some example log files for various dunnel configuration combinations(encoding x record types). This produced some interesting looking log files, some samples can be seen below or the artifacts downloaded from the pipelines view in CircleCI (click badge above).
+A circleci matrix pipeline was created to generate some example log files for various dunnel configuration combinations(encoding x record types). This produced some interesting looking log files, some samples can be seen below or the artifacts downloaded from the pipelines view in CircleCI (click badge above). 
 
 ### Docker-Compose
 ```console
