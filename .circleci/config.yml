@@ -27,11 +27,6 @@ jobs:
             sudo apt-get update
             sudo apt install -y tcpdump
             mkdir -p /tmp/pcaps/
-
-            #link_name=$(docker exec -it attack_client_1 cat /sys/class/net/eth0/iflink | grep -Po '.*\d+.*')
-            #ip link | grep $link_name
-
-
             sudo tcpdump -i any -U -s0 -W 10 -C 300 -w /tmp/pcaps/pcap_iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>_ -nn host 172.18.0.3 -Z root &
             docker exec -d attack_server_1 /usr/sbin/sshd -D
             docker exec -d attack_client_1 iodine -4 -f -P abc123 -T<< parameters.dnstype >> -O<< parameters.encoding >> -r 172.18.0.4 example.attack
@@ -40,7 +35,6 @@ jobs:
             docker exec -it dns_server_1 mv /var/bind/query.log /tmp/bind/iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>-query.log
             
             sudo chmod -R +rw $LOG_DIR/
-            ls -lah $LOG_DIR
 
       - run:
           shell: /bin/bash
@@ -62,5 +56,5 @@ workflows:
       - build:
           matrix:
             parameters:
-              dnstype: ['null'] #, srv, cname, txt, private, mx, a]
-              encoding: [raw] #, base32, base64, base128]
+              dnstype: ['null', srv, cname, txt, private, mx, a]
+              encoding: [raw, base32, base64, base128]
