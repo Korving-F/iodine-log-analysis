@@ -25,7 +25,7 @@ jobs:
             docker-compose up -d
             docker-compose ps
             sudo apt-get update
-            sudp apt install -y tcpdump
+            sudo apt install -y tcpdump
             sudo tcpdump -s0 -W 10 -C 300 -w /tmp/pcap_odine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>_ -nn host 172.18.0.3 &
             #pid_tcpdump=$(pidof tcpdump)
             docker exec -d attack_server_1 /usr/sbin/sshd -D
