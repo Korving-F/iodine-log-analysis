@@ -26,23 +26,27 @@ jobs:
             docker-compose ps
             sudo apt-get update
             sudo apt install -y tcpdump
-            sudo chmod -R +rw $LOG_DIR/
-            ls -lah $LOG_DIR
-            ls -ld $LOG_DIR
-            sudo tcpdump -U -s0 -W 10 -C 300 -w /tmp/logs/pcap_iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>_ -nn host 172.18.0.3 &
+
+            sudo tcpdump -U -s0 -W 10 -C 300 -w /tmp/pcap_iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>_ -nn host 172.18.0.3 &
             docker exec -d attack_server_1 /usr/sbin/sshd -D
             docker exec -d attack_client_1 iodine -4 -f -P abc123 -T<< parameters.dnstype >> -O<< parameters.encoding >> -r 172.18.0.4 example.attack
             #docker exec -d attack_client_1 iodine -4 -f -P abc123 -Tsrv -Oraw -r 172.18.0.4 example.attack
             docker exec -it attack_client_1 sshpass -p 'root' scp -r -oStrictHostKeyChecking=no root@10.0.0.1:test-file /tmp/
             docker exec -it dns_server_1 mv /var/bind/query.log /tmp/bind/iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>-query.log
-            #sudo mv /tmp/pcap* $LOG_DIR/
+            
             sudo chmod -R +rw $LOG_DIR/
             ls -lah $LOG_DIR
+
       - run:
           shell: /bin/bash
           command: |
-            kill $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}')
-            #docker exec -it dns_server_1 mv /var/bind/pcap_* /tmp/bind/
+            kill $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}') || true
+      
+      - run:
+          shell: /bin/bash
+          command: |
+            sudo mv /tmp/pcap* $LOG_DIR/
+
 
       - store_artifacts:
           path: /tmp/logs
