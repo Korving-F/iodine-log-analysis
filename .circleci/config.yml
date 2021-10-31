@@ -27,7 +27,7 @@ jobs:
             sudo apt-get update
             sudo apt install -y tcpdump
             mkdir -p /tmp/pcaps/
-            sudo tcpdump -U -s0 -W 10 -C 300 -w /tmp/pcaps/pcap_iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>_ -nn host 172.18.0.3 &
+            sudo tcpdump -U -s0 -W 10 -C 300 -w /tmp/pcaps/pcap_iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>_ -nn host 172.18.0.3 -Z root &
             docker exec -d attack_server_1 /usr/sbin/sshd -D
             docker exec -d attack_client_1 iodine -4 -f -P abc123 -T<< parameters.dnstype >> -O<< parameters.encoding >> -r 172.18.0.4 example.attack
             #docker exec -d attack_client_1 iodine -4 -f -P abc123 -Tsrv -Oraw -r 172.18.0.4 example.attack
@@ -40,12 +40,7 @@ jobs:
       - run:
           shell: /bin/bash
           command: |
-            ! kill -9 $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}')
-      
-      - run:
-          shell: /bin/bash
-          command: |
-            sudo mv /tmp/pcap* $LOG_DIR/
+            kill -9 $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}')
 
       - store_artifacts:
           path: /tmp/logs
