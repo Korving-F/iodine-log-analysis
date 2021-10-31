@@ -9,6 +9,7 @@ services:
     networks:
       static-network:
         ipv4_address: 172.18.0.4
+
   attack_client:
     build: './.circleci/images/attack_client'
     privileged: true
@@ -19,6 +20,7 @@ services:
     networks:
       static-network:
         ipv4_address: 172.18.0.3
+
   attack_server:
     build: './.circleci/images/attack_server'
     privileged: true
