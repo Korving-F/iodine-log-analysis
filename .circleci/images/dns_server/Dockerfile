@@ -1,11 +1,10 @@
 FROM alpine:edge
 
 # Fetch and install dnsmasq
-RUN apk update && apk --no-cache add dnsmasq
+RUN apk update && apk --no-cache add bind
 
-#configure dnsmasq
-RUN mkdir -p /etc/default/
-RUN echo -e "ENABLED=1\nIGNORE_RESOLVCONF=yes" > /etc/default/dnsmasq
-COPY dnsmasq.conf /etc/dnsmasq.conf
+# Configure BIND9
+COPY named.conf /etc/bind/named.conf
 
-ENTRYPOINT ["dnsmasq","--no-daemon"]
+# Start BIND9 in foreground
+ENTRYPOINT ["/usr/sbin/named", "-f"]

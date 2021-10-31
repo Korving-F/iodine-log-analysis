@@ -4,7 +4,7 @@ services:
     build: './.circleci/images/dns_server'
     privileged: true
     volumes:
-      - /tmp/dnsmasq-logs:/var/log 
+      - /tmp/logs:/var/log 
     container_name: dns_server_1
     networks:
       static-network:
@@ -14,6 +14,7 @@ services:
     privileged: true
     depends_on:
       - 'attack_server'
+      - 'dns_server'
     container_name: attack_client_1
     networks:
       static-network:
