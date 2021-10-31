@@ -7,4 +7,4 @@ RUN apk update && apk --no-cache add bind
 COPY named.conf /etc/bind/named.conf
 
 # Start BIND9 in foreground
-CMD ["named", "-f"]
+CMD ["named", "-g"]

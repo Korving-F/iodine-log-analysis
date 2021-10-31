@@ -41,5 +41,5 @@ workflows:
       - build:
           matrix:
             parameters:
-              dnstype: ['null', srv, cname, txt, private, mx, a]
-              encoding: [raw, base32, base64, base128]
+              dnstype: ['null'] #, srv, cname, txt, private, mx, a]
+              encoding: [raw] #, base32, base64, base128]
