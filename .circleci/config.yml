@@ -24,7 +24,7 @@ jobs:
             set -x
             docker-compose up -d
             docker-compose ps
-            docker run -d project_dns_server --ip="172.18.0.5" --network="static-network" /usr/sbin/named -f
+            docker run -d --ip="172.18.0.5" --network="static-network" project_dns_server  /usr/sbin/named -f
             docker exec -d attack_server_1 /usr/sbin/sshd -D
             docker exec -d attack_client_1 iodine -4 -f -P abc123 -T<< parameters.dnstype >> -O<< parameters.encoding >> -r 172.18.0.5 example.attack
             #docker exec -d attack_client_1 iodine -4 -f -P abc123 -Tsrv -Oraw -r 172.18.0.5 example.attack
