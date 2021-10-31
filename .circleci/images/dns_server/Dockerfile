@@ -1,9 +1,7 @@
-FROM ubuntu:bionic
+FROM alpine:edge
 
 # Fetch and install dnsmasq
-# RUN apk update && apk --no-cache add bind
-
-RUN apt-get update -y && apt-get install -y bind9
+RUN apk update && apk --no-cache add bind
 
 # Configure BIND9
 COPY named.conf /etc/bind/named.conf
