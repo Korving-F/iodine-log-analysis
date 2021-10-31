@@ -40,7 +40,7 @@ jobs:
       - run:
           shell: /bin/bash
           command: |
-            kill -9 $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}') || true
+            ! kill -9 $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}')
       
       - run:
           shell: /bin/bash
