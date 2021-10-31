@@ -4,7 +4,7 @@ services:
     build: './.circleci/images/dns_server'
     privileged: true
     volumes:
-      - /tmp/logs:/var/log 
+      - /tmp/logs:/var/bind/
     container_name: dns_server_1
     networks:
       static-network:
