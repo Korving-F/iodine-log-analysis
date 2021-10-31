@@ -24,7 +24,6 @@ jobs:
             set -x
             docker-compose up -d
             docker-compose ps
-            docker run -d --ip="172.18.0.5" --network="project_static-network" --name project_dns_server2  project_dns_server  /usr/sbin/named -f
             docker exec -d attack_server_1 /usr/sbin/sshd -D
             docker exec -d attack_client_1 iodine -4 -f -P abc123 -T<< parameters.dnstype >> -O<< parameters.encoding >> -r 172.18.0.4 example.attack
             #docker exec -d attack_client_1 iodine -4 -f -P abc123 -Tsrv -Oraw -r 172.18.0.4 example.attack
@@ -43,5 +42,5 @@ workflows:
       - build:
           matrix:
             parameters:
-              dnstype: ['null'] #, srv, cname, txt, private, mx, a]
-              encoding: [raw] #, base32, base64, base128]
+              dnstype: ['null', srv, cname, txt, private, mx, a]
+              encoding: [raw, base32, base64, base128]
